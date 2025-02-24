@@ -1,0 +1,1 @@
+/usr/bin/php /www/wwwroot/021bababa.org/api/data.php > /www/wwwroot/021bababa.org/api/log_data.txt 2>&1

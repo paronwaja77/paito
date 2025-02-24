@@ -1,0 +1,34 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// URL Target
+$url = 'http://178.128.93.136/';
+
+// Mengambil konten dari URL menggunakan cURL
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+$content = curl_exec($ch);
+curl_close($ch);
+
+// Regex untuk menangkap seluruh tabel dengan id "drawing-table"
+preg_match('/<table id="drawing-table"[^>]*>.*?<\/table>/s', $content, $matches);
+
+// Memeriksa apakah konten ditemukan
+if (isset($matches[0])) {
+    // Bersihkan karakter newline dan tab dalam konten HTML
+    $cleaned_content = str_replace(["\n", "\t"], '', $matches[0]);
+
+    // Menyimpan konten yang dibersihkan dalam format JSON
+    $data = ['content' => $cleaned_content];
+
+    // Menyimpan data dalam file data.json
+    file_put_contents('data.json', json_encode($data, JSON_UNESCAPED_UNICODE));  // Menyimpan JSON ke file data.json
+    echo "Data berhasil disimpan dalam data.json.";
+} else {
+    echo "Konten tabel tidak ditemukan.";
+}
+?>

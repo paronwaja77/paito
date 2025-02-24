@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Paito HK Lotto - Hasil keluaran Hongkong, data Paito HK, dan prediksi angka HK terpercaya, terupdate dan akurat.">
+  <meta name="keywords" content="Paito HK Lotto, Paito HK, Hasil Keluaran Hongkong, Prediksi Angka HK, Data Paito HK, Live Result HK">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Paito HK Lotto | Hasil Keluaran dan Prediksi Angka HK Terbaru">
+  <meta property="og:description" content="Paito HK Lotto memberikan hasil keluaran Hongkong dan prediksi angka HK terpercaya dan terbaru.">
+  <meta property="og:image" content="URL_TO_YOUR_LOGO_IMAGE">
+  <meta property="og:type" content="website">
+  <meta name="geo.placename" content="Indonesia" />
+  <meta name="geo.region" content="ID" />
+  <meta name="geo.country" content="ID" />
+  <meta name="language" content="id-ID" />
+  <meta name="tgn.nation" content="Indonesia" />
+  <title>Paito HK Lotto | Hasil Keluaran dan Prediksi Angka HK Terbaru</title>
+  <link rel="stylesheet" href="URL" class="canonical">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="http://localhost/paito/paitowarna.js"></script>
+  <style>
+  body {
+    font-family: 'Roboto', sans-serif;  /* Menggunakan font 'Roboto' dari Google Fonts */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    font-size: 15px;
+  }
+  
+      /* Header Style */
+      header {
+        background-color: #ffffff;
+        color: #e0484d;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 30px;
+      }
+  
+      .logo {
+        margin: auto;
+    background-image: url('http://localhost/paito/img/logo1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 500px;
+  }
+  
+  
+      /* Desktop Menu */
+      .menu {
+        display: flex;              
+        gap: 20px;                  
+        background-color: #db3439;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-transform: uppercase;
+      }
+  
+      .menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 10px 5px;
+      }
+  
+      .menu a:hover {
+        background-color: #e0484d;   
+      }
+  
+      /* Side Menu (Hidden by default) */
+      .side-menu {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 12px;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.3s;
+      }
+  
+      .side-menu a {
+        padding: 8px 16px;
+        text-decoration: none;
+        font-size: 18px;
+        color: black;
+        display: block;
+      }
+      
+  
+      .side-menu a:hover {
+        background-color: #e0484d;
+      }
+  
+      .menu-icon {
+        font-size: 30px;
+        color: #db3439;
+        cursor: pointer;
+        display: none; /* Initially hidden on desktop */
+      }
+  
+      /* Toggle open menu */
+      .side-menu.open {
+        width: 250px;
+      }
+     /* Gaya untuk tombol close */
+  .closebtn {
+    font-size: 36px;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+      /* Container style with fixed width of 960px */
+      .container {
+        width: 960px;  /* Fixed width */
+        margin:0 auto;
+        padding: 15px;
+      }
+  
+      article {
+        background-color: white;
+        margin: auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+  
+      article h1, article h2 {
+        text-align: center;
+      }
+  
+      /* Footer Style */
+      footer {
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 5px;
+      }
+  
+      footer a {
+        color: #e0484d;
+        text-decoration: none;
+      }
+  
+      footer a:hover {
+        text-decoration: underline;
+      }
+  /* Mengatur container menu warna melayang di kiri */
+  .menucolor {
+    position: fixed;  /* Agar menu tetap di sisi kiri layar */
+    top: 50%;         /* Menempatkan di tengah layar secara vertikal */
+    left: 2px;
+    transform: translateY(-50%); /* Menyelaraskan tengah vertikal */
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;  /* Pastikan berada di atas elemen lain */
+    width: 30px;
+  }
+  
+  /* Gaya untuk setiap tombol */
+  .button {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px 0px 15px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    text-align: left; /* Menyelaraskan teks ke kiri */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  
+          /* Warna yang sedikit lebih gelap dan lembut */
+          .light-red { background-color: #FF6666; }
+          .light-blue { background-color: #80C9FF; }
+          .light-green { background-color: #66CDAA; }
+          .light-yellow { background-color: #F7E08C; }
+          .light-orange { background-color: #FFB347; }
+          .light-purple { background-color: #D9A7E6; }
+          .light-pink { background-color: #FF7F7F; }
+          .light-brown { background-color: #C4A484; }
+          .light-gray { background-color: #A9A9A9; }
+  
+          /* Menambahkan kelas untuk highlight tombol yang dipilih */
+          .selected {
+              box-shadow: inset 0 0 0 4px #000;
+              background-color: #ccc;
+          }
+          
+          .clear-btn {
+              color: black;
+              padding: 0;
+              cursor: pointer;
+              margin-top: 5px;
+              padding: 5px 0px 5px;
+              font-weight: 600;
+          }
+          .e1, .e2, .e3, .e4, .e5, .e6, .e7, .e8, .e9, .e0 {
+      background-color: #FF6666;
+      border-radius: 0;
+      color: #fff;
+  }
+  
+  .k1, .k2, .k3, .k4, .k5, .k6, .k7, .k8, .k9, .k0 {
+      background-color: #66CDAA;
+      border-radius: 0;
+      color: #fff;
+  }
+  
+  .c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c0 {
+      background-color: #80C9FF;
+      border-radius: 0;
+      color: #fff;
+  }
+  
+  .a1, .a2, .a3, .a4, .a5, .a6, .a7, .a8, .a9, .a0 {
+      background-color: orange;
+      border-radius: 0;
+      color: #fff;
+  }
+  .paito {
+    width: 75%;
+    margin: auto;
+    }
+  #drawing-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #f9f9f9;  /* Warna latar belakang tabel */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Efek bayangan pada tabel */
+    }
+  
+    /* Header tabel */
+    #drawing-table .headd td {
+      background-color: #db3439;  /* Warna latar belakang header */
+      color: white;  /* Warna teks header */
+      padding: 3px;
+      text-align: center;
+      font-size: 16px;
+    }
+  
+    /* Baris pada tabel */
+    #drawing-table td {
+      padding: 3px 0 3px 0;
+      text-align: center;
+      font-size: 16px;
+      color: #000;  /* Warna teks */
+      border: 1px solid #ccc;  /* Batas tabel */
+    }
+  
+  /* Styling untuk elemen dengan kelas 'asux' */
+  #drawing-table .asux {
+    color: #d7d1d1; /* Warna teks menjadi putih agar kontras */
+  
+  }
+  
+  /* Latar belakang khusus untuk baris ke-5 */
+  #drawing-table tr:nth-child(5n) {
+    background-color: #e4e4e4;  /* Warna latar belakang setiap kelipatan baris ke-5 */
+    color: white;  /* Warna teks pada baris */
+  }
+  #myForm {
+    display: flex;
+    flex-wrap: wrap;                /* Membuat elemen wrap jika tidak cukup space */
+  justify-content: space-evenly;
+    gap: 10px;                   /* Memberikan jarak antar elemen */
+    border-radius: 8px;             /* Sudut membulat */
+    margin: 20px auto;              /* Mengatur form di tengah halaman */
+    max-width: 100%;
+    width: 300px;
+  }
+  
+  /* Group for each input */
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;                       /* Jarak antar label dan input */
+    width: 100%;                    /* Setiap input mengambil lebar penuh */
+    max-width: 50px;              /* Membatasi lebar maksimal input */
+  }
+  
+  /* Input Styling */
+  .cari {
+    padding: 5px;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border 0.3s ease;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .cari:focus {
+    border-color: #3498db;          /* Memberikan warna border biru saat fokus */
+  }
+  
+  /* Styling untuk tombol reset */
+  .reset-button {
+    padding: 5px;
+    font-size: 13px;
+    background-color: #e74c3c;   /* Tombol reset merah cerah */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;                  /* Tombol memiliki ukuran otomatis */
+  }
+  
+  .reset-button:hover {
+    background-color: #c0392b;    /* Warna lebih gelap saat hover */
+  }
+  @media (max-width: 1100px) {
+        header h1 {
+          font-size: 22px;
+          text-align: center;
+        }
+  
+        /* Mobile Menu */
+        .menu {
+          display: none; /* Hide the desktop menu on mobile */
+        }
+  
+        .menu-icon {
+          display: block; /* Show the hamburger icon only on mobile */
+          align-content: center;
+        }
+  
+        .side-menu {
+          width: 0; /* Keep menu hidden initially */
+        }
+  
+        /* Side menu open on mobile */
+        .side-menu.open {
+          width: 100%;
+        }
+  
+        .container {
+          width: 100%;  /* Full width on mobile */
+          padding: 10px 0;
+        }
+  
+        article h2 {
+          font-size: 20px;
+        }
+        .paito {
+      width: 100%;
+    }
+    /* Mengatur container menu warna melayang di kiri untuk desktop */
+  .menucolor {
+    position: fixed;  /* Agar menu tetap di sisi kiri layar */
+    top: 50%;         /* Menempatkan di tengah layar secara vertikal */
+    left: 2px;
+    transform: translateY(-50%); /* Menyelaraskan tengah vertikal */
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;  /* Pastikan berada di atas elemen lain */
+    width: 30px;
+  }
+  
+  
+  .menucolor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Memenuhi lebar layar */
+    height: 40px; /* Menyesuaikan tinggi menu */
+    display: flex;
+    justify-content: space-evenly; /* Membuat tombol tersebar merata di sepanjang lebar menu */
+    align-items: center; /* Menjaga tombol tetap di tengah secara vertikal */
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: none;
+    padding: 1px 0; /* Mengurangi padding menu */
+    background-color: #333; /* Memberikan latar belakang gelap */
+    z-index: 1000; /* Menjaga agar menu tetap berada di atas elemen lainnya */
+  }
+  
+  /* Gaya untuk tombol pada mobile */
+  .button {
+    width: auto; /* Tombol menyesuaikan lebar sesuai dengan teks */
+    padding: 12px; /* Mengatur padding tombol agar tidak terlalu besar */
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 14px; /* Mengurangi ukuran font untuk mobile */
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px; /* Memberikan border radius pada tombol */
+    transition: background-color 0.3s ease; /* Transisi saat hover */
+    display: inline-block; /* Menjaga tombol sejajar secara horizontal */
+  }
+  
+  
+  /* Gaya untuk tombol Clear jika diperlukan */
+  .clear-btn {
+    width: auto;
+    padding: 5px 2px;
+    background-color: #db3439; /* Bisa diubah dengan warna lain */
+    border-radius: 5px;
+    color: white;
+    font-size: 10px;
+    cursor: pointer;
+    margin: 0; /* Memberikan sedikit jarak antara tombol clear dan tombol lainnya */
+    transition: background-color 0.3s ease;
+  }
+  
+          /* Warna yang sedikit lebih gelap dan lembut */
+          .light-red { background-color: #FF6666; }
+          .light-blue { background-color: #80C9FF; }
+          .light-green { background-color: #66CDAA; }
+          .light-yellow { background-color: #F7E08C; }
+          .light-orange { background-color: #FFB347; }
+          .light-purple { background-color: #D9A7E6; }
+          .light-pink { background-color: #FF7F7F; }
+          .light-brown { background-color: #C4A484; }
+          .light-gray { background-color: #A9A9A9; }
+    #colormenu {
+      top: 0;
+      left: 0;
+      right: 0;
+      width: auto;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      box-shadow: none;
+    }
+  
+    /* Tombol Clear lebih kecil di versi mobile */
+    #colormenu button {
+      width: auto;
+      padding: 6px 10px; /* Padding lebih kecil */
+      margin: 0;
+      font-size: 12px; /* Ukuran font lebih kecil */
+    }
+  
+    #color-selector {
+      flex-direction: row;
+      gap: 5px;
+      margin-top: 7px;
+      width: 100%;
+      justify-content: space-between;
+      border: none;
+    }
+  
+    .color {
+      width: 25px; /* Lebar lebih kecil */
+      height: 25px;
+    }
+   .color { background-color: #ff5050; }
+        #drawing-table {
+      width: 100%;
+      font-size: 14px;
+    }
+    
+    #drawing-table th, #drawing-table td, #drawing-table .headd td{
+      padding: 0px;
+    }
+  
+    header h1 {
+          font-size: 18px;
+        }
+  
+        .menu {
+          flex-direction: column;
+          align-items: center;
+        }
+        .input-group {
+          max-width: 40px;
+        }
+      }
+      @media (max-width: 510px) {
+    #drawing-table th, #drawing-table td, #drawing-table .headd td{
+      padding: 0px;
+      font-size: 10px;
+      
+    }
+  }
+      </style>
+</head>
+<body>
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger Icon -->
+    <a class="logo" href="" alt="paito hk lotto"></a>
+  </header>
+
+  <!-- Desktop Menu (Visible on screens wider than 768px) -->
+  <nav class="menu">
+    <a href="URL">Paito Hk Lotto</a>
+    <a href="#">Hasil Keluaran</a>
+    <a href="#">Prediksi Angka</a>
+  </nav>
+
+  <!-- Side Menu (Hidden on desktop, shows on mobile) -->
+  <div id="mySidenav" class="side-menu">
+    <header>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&#x2715;</a>
+    <div class="logo">
+  </header>
+    <a href="#">Paito Hk Lotto</a>
+    <a href="#">Hasil Keluaran</a>
+    <a href="#">Prediksi Angka</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <article>
+      <h1>Paito HK Lotto - Hasil Keluaran & Prediksi Angka HK Terbaru</h1>
+      <p>Paito HK Lotto adalah referensi utama bagi pemain togel Hongkong. Menyediakan informasi terkini tentang hasil keluaran angka Hongkong yang telah dilakukan secara sah oleh pihak berwenang. Data ini mencakup hasil dari pengundian yang dilakukan setiap hari. Dengan menggunakan Paito HK, pemain togel dapat menganalisis pola dan tren angka yang sering keluar untuk membantu memprediksi angka yang kemungkinan besar akan muncul di masa depan.</p>
+      
+
+      <div class="paito">
+    <!-- Tombol Pilihan Warna -->
+     <div class="menucolor">
+    <button class="button light-red" onclick="selectColor('#FF6666', this)"></button>
+    <button class="button light-blue" onclick="selectColor('#80C9FF', this)"></button>
+    <button class="button light-green" onclick="selectColor('#66CDAA', this)"></button>
+    <button class="button light-yellow" onclick="selectColor('#F7E08C', this)"></button>
+    <button class="button light-orange" onclick="selectColor('#FFB347', this)"></button>
+    <button class="button light-purple" onclick="selectColor('#D9A7E6', this)"></button>
+    <button class="button light-pink" onclick="selectColor('#FF7F7F', this)"></button>
+    <button class="button light-brown" onclick="selectColor('#C4A484', this)"></button>
+    <button class="button light-gray" onclick="selectColor('#A9A9A9', this)"></button>
+    <button class="clear-btn" onclick="clearColors()">Clear</button>
+  </div>
+
+           <!-- Tabel yang akan diisi oleh konten JSON -->
+    <div id="table-container"></div>
+    <form id="myForm">
+      <div class="input-group">
+        <select class="cari" id="asc">
+          <option value="">As</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <select class="cari" id="kopc">
+          <option value="">Kop</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <select class="cari" id="kepalac">
+          <option value="">Kep</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <select class="cari" id="ekorc">
+          <option value="">Ekr</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+        </select>
+      </div>
+      <button id="rb" type="button" class="reset-button">Reset</button>
+    </form>
+    
+  </div>
+
+  </article>
+    </div>
+     <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 Paito HK Lotto.</p>
+    <p>Hubungi kami melalui email di <a href="mailto:info@paitohklotto.com">info@paitohklotto.com</a></p>
+  </footer>
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    loadData();
+});</script>
+
+<script src="http://localhost/paito/script.js"></script>
+</body>
+</html>
